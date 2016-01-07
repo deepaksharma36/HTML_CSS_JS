@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML CSS Assesment Task</title>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+<style type="text/css" rel="stylesheet">
+
+fieldset{
+        border:10px solid yellow;
+        background:lightyellow;
+        margin-bottom:10px;
+        width: 720px;
+}
+label{
+  display:inline-block;
+  text-align: right;
+  width: 180px;
+  margin-bottom:10px;
+  vertical-align: top;
+}
+
+.radio{
+  width: auto;
+}
+.checkbox{
+  width: auto;
+}
+.left{
+  background-color: red;
+}
+.right{
+  background-color: purple;
+}
+.left , .right {
+        text-align: center;
+        display: inline-block;
+        width:65px;
+        color: white;
+        vertical-align: top;
+
+      }
+textarea {
+        width: 360px;
+        height:	50px;
+      }
+      label:hover,input:hover{
+        font-size: 25px
+      }
+</style>
+</head>
+</body>
+<h1>Please Enter Your Details For Our Dating Website</h1>
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data" class="datingform">
+    <fieldset>
+    <legend>Your Face</legend>
+
+    <label for ="FileUploader">Your Image:</label>
+    <input type="file" id="FileUploader" name="FileUploader" required></input><br />
+    <label >Image Priview:</label>
+    <img id="preview" > </img><br />
+  </fieldset>
+
+  <fieldset>
+  <legend>Your General Details</legend>
+
+  <label for ="Name"> Name:</label>
+  <input type="text" id="Name" name="Name" required placeholder="Your Full Name"></input><br />
+
+  <label for ="Gender" > Gender:</label>
+  <input type="radio" id="Male" name="Gender" required></input>
+  <label for ="Gender" class="radio">Male</label>
+  <input type="radio" id="Female" name="Gender" required></input>
+  <label for ="Gender" class="radio">Female</label><br />
+
+  <label for ="Age"> Age:</label>
+  <input type="number" id="Age" name="Age" min="0" max="100" value="18" required ></input><br />
+  <label for ="DateOFBirth"> Date Of Birth:</label>
+  <input type="date" id="DOB" name="DOB" ></input><br />
+  <label for ="Color"> Favorite Color:</label>
+  <input type="color" id="color" name="color" value="black"></input><br />
+
+  <label for ="country"> Which country:</label>
+  <select id="country" name="country" value="" >
+  <option value="" ></option>
+  <option value="usa" >U.S.A</option>
+  <option value="india" >India</option>
+  <option value="china" >China</option>
+  <option value="Germany">Germany</option>
+  <option value="Japan" >Japan</option>
+</select><br />
+
+</fieldset>
+<fieldset>
+<legend>Your Indicators</legend>
+
+<label for ="Height"> Height:</label>
+<span class ="left">Short</span>
+<input type="range" id="Height" name="Height" min="0" max="100"></input>
+<span class ="right">Tall</span><br />
+
+<label for ="Salary"> Salary:</label>
+<span class ="left">Poor</span>
+<input type="range" id="Salary" name="Salary"min="0" max="100"></input>
+<span class ="right">Rich</span><br />
+</fieldset>
+
+<fieldset>
+<legend>Your Contact Information</legend>
+
+<label for ="Email"> Email:</label>
+<input type="email" id="Email" name="Email" required></input><br />
+
+<label for ="Phone"> Mobile:</label>
+<input type="tel" id="Phone" name="Phone" ></input><br />
+
+<label for ="Address"> Address:</label>
+<textarea id="Address"  name="Address" ></textarea><br />
+
+<label for ="MethodToContact"> Method To Contact you:</label>
+<input type="checkbox" id="byEmail" name="MethodToContact" ></input>
+<label for ="MethodToContact" class="checkbox"> Email:</label>
+<input type="checkbox" id="byWhatsapp" name="MethodToContact" ></input>
+<label for ="MethodToContact" class="checkbox"> Whatsapp</label>
+<input type="checkbox" id="byInAppChat" name="MethodToContact" ></input>
+<label for ="MethodToContact" class="checkbox"> In-app chat:</label><br />
+
+</fieldset>
+<input type="submit" id="submit" value="submit" ></input>
+</form>
+</body>
+</html>

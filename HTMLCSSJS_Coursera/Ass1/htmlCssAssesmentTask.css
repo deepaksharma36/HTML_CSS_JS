@@ -1,0 +1,39 @@
+fieldset{
+border:10px solid yellow;
+background:lightyellow;
+margin-bottom:10px;
+width: 720px;
+}
+
+label {
+	width: 180px;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+}
+.radio{
+  width: auto;
+}
+.checkbox{
+  width: auto;
+}
+.left{
+  background-color: red;
+
+}
+.right{
+  background-color: purple;
+}
+.left, .right {
+
+        text-align: center;
+				display: inline-block;
+				width:60px;
+        color: white;
+        vertical-align: top;
+
+			}
+textarea {
+				width: 360px;
+				height:	50px;
+			}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Color Game</title>
+	<script >
+  guess_Count=0;
+  colors=["YellowGreen", "Black", "Cyan", "Olive" ,"Maroon" ,"Teal", "Aqua" ,"MidnightBlue" ,"SpringGreen" ,"WhiteSmoke" ];
+  target_index=Math.floor((Math.random() * 10));
+
+    function do_game()
+    {
+
+      target=colors[target_index];
+      alert("For testing Traget is: " + target +" " +target_index);
+
+    do {
+        player_guess=prompt("I am Thinking of one of these colors: \n\n YellowGreen, Black, Cyan, Olive  ,Maroon ,Teal, Aqua ,MidnightBlue ,SpringGreen ,WhiteSmoke \n\n what color am I thinking of?");
+        guess_Count+=1;
+
+      }while(player_guess!=target);
+         //alert("Congratulation! You have guessed the color! \n\n it took  you "+guess_Count+"  gusses to finish the game \n\n you can see the color in background. ")
+         //myBody=document.getElementsByTagName("body")[0];
+         //myBody.style.background=name=target;
+
+    }
+  </script>
+</head >
+<body onload="do_game()">
+
+
+</body>
+</html>
