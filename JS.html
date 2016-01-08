@@ -1,0 +1,100 @@
+<html>
+      <head id="ahead">
+            <title id="atitle">
+                      Arrays and DOM
+            </title>
+            <script id="ascript">
+          function  main(){
+             var pets =["lion","tiger","penther","dog","cat"];
+             //alert(pets);
+             pets.sort();
+             document.getElementsByTagName("p")[0].innerHTML = pets.toString()+" ************  \t After sorting pets.sort();";
+             //alert("working");
+             pets.reverse();
+             document.getElementsByTagName('P')[1].innerHTML=pets.toString()+"             ************\tAfter reversing pets.reverse();";
+             pets=pets.slice(1);//slice returns a array not modify
+             document.getElementsByTagName('P')[2].innerHTML=pets.toString()+"              ************ \treturn After Slicing pets=pets.slice(1)";
+             result=pets.splice(1,1);//modify original array removes the elements and return removed elements
+             document.getElementsByTagName('P')[3].innerHTML=pets.toString()+"           ************    \tAfter Splicing";
+             document.getElementsByTagName('P')[4].innerHTML=result.toString()+"        ************    \t  retrun After Slicing";
+             result=pets.splice(0,0,"cow")
+             document.getElementsByTagName('P')[3].innerHTML=pets.toString()+"     ************       \t   After Splicing on 0 elememts at,location 0";
+             document.getElementsByTagName('P')[4].innerHTML=result.toString()+"        \t   ************   return After Splicing on 0 elememts at,location 0";
+             result=pets.splice(0,1,"pig");
+             document.getElementsByTagName('P')[5].innerHTML=pets.toString()+"            \t   ************ After Splicing on 1 elememts at,location 0";
+             document.getElementsByTagName('P')[6].innerHTML=result.toString()+"        \t     ************ return After Splicing on 1 elememts at,location 0";
+
+             document.getElementsByTagName('P')[7].innerHTML=pets.indexOf("dog",0);
+             //for(var pet of pets )
+             //{alert(pet);}
+             pets.forEach(function(entry,aindex,aarray){
+               //define your operation here first para is element followed by index and aary
+               //alert(entry+aindex.toString()+aarray.toString()  );
+               aarray[aindex]=entry+entry;
+             });
+             document.getElementsByTagName('P')[8].innerHTML=pets.toString();
+             function sample (element){
+              return element+element;
+             }
+             alert(pets.map(sample));
+             newElement=document.createElement("hr");
+             //alert(newElement);
+             parent=document.getElementsByTagName("body")[0];
+             //alert(parent);
+             //element's insertBefore method takes an element and potions in DOm Stucture
+             parent.insertBefore(newElement,parent.firstChild);
+
+             result=document.createTextNode("Dynamically added ");
+             result1=document.createTextNode("Dynamically added ");
+             result2=document.createTextNode("Dynamically added ");
+             result3=document.createTextNode("Dynamically added ");
+             document.getElementById('last').appendChild(result);
+             //alert("working");
+             document.getElementById('last').appendChild(result1);
+             //alert("working");
+             document.getElementById('last').appendChild(result2);
+             //alert("working");
+             document.getElementById('last').appendChild(result3);
+
+              //alert(
+              //document.body.childNodes[3].style.color="Blue"; Not working
+
+              document.getElementById('last').parentNode.removeChild(document.getElementById('last'));
+              alert("Sucess");
+              aparent=document.getElementById('p1').parentNode;
+              while(aparent.firstChild)
+              {
+                aparent.removeChild(aparent.firstChild);
+              }
+              var theCloneNode=document.getElementById("p3").cloneNode(true);
+              document.getElementById("asection").appendChild(theCloneNode);
+
+              }
+
+            </script>
+      </head>
+      <body onload="main()">
+        <div id="asection">
+                    <p id="p1"> hi</p>
+                    <p id="p2" >bye</p>
+                    <p></p>
+                    <p></p>
+        </div>
+        <div id="bsection">
+                    <p id="p3"></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <div id=dad>
+                                <div id=last></div>
+                    </div>
+          </div>
+      </body>
+</html>
