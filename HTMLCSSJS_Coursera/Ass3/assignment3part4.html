@@ -1,0 +1,65 @@
+<html>
+        <head>
+              <script>
+                      numberOfFaces=5;
+                      var theLeftSide = document.getElementById("leftSide")
+                      function generateFaces(){
+                        //alert("Inside Function");
+
+                        for(var counter=0;counter<numberOfFaces;counter++){
+                            var x=Math.floor((Math.random() * 400));
+                            var y=Math.floor((Math.random() * 400));
+                            var image= document.createElement("img");
+                            image.style.left=x+"px";
+                            image.style.top=y+"px";
+                            image.src='smile.png';
+                            document.getElementById("leftSide").appendChild(image);
+                          }
+                          //numberOfFaces+=5;
+                          var theRightSide = document.getElementById("rightSide");
+                          var theLeftSide=document.getElementById("leftSide");
+                          var theLeftSideClone = theLeftSide.cloneNode(true);
+                          theLeftSideClone.removeChild(theLeftSideClone.lastChild);
+                          theRightSide.appendChild(theLeftSideClone);
+                          theLeftSide.lastChild.onclick=function nextLevel(event){
+                                                        event.stopPropagation();
+                                                        numberOfFaces += 5;
+                                                        cleanDiv();
+                                                        generateFaces();};
+                      var theBody = document.getElementsByTagName("body")[0];
+                      theBody.onclick = function gameOver() {  alert("Game Over!");
+                                          theBody.onclick = null;
+                                          theLeftSide.lastChild.onclick = null;};
+                       }
+
+                       function cleanDiv()
+                       {
+                         var leftSide=document.getElementById("leftSide");
+                         var rightSide=document.getElementById("rightSide");
+                         while(leftSide.firstChild)
+                         leftSide.removeChild(leftSide.firstChild);
+                         while(rightSide.firstChild)
+                         rightSide.removeChild(rightSide.firstChild);
+                       }
+              </script>
+              <style>
+              div{
+                position: absolute;
+                width: 500px;
+                height: 500px;
+              }
+              #rightSide { left: 500px;
+                          border-left: 1px solid black }
+               img {position:absolute}
+              </style>
+              <title> Matching Game </title>
+        </head>
+        <body onload=generateFaces()>
+              <h1>Matching Game</h1>
+              <p>Click on extra smiling face on the left</p>
+              <div id="leftSide">
+
+              </div>
+              <div id="rightSide"></div>
+        </body>
+</html>
